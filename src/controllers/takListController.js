@@ -23,6 +23,12 @@ module.exports = {
   },
 
   // GET /app/:id
+  show: (req, res) => {
+    const { id } = req.params
+    if (!id) throw new Error('Lista de tarefas não encontrada!')
+    const taskList = taskListModel.getTaskListById(id)
+    res.render('show', { taskList })
+  }
 
   // POST /app/:id/excluir
 

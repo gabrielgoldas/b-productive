@@ -1,12 +1,16 @@
 let taskLists = [
-  { id: '1', title: 'Estudos' },
-  { id: '2', title: 'Tarefas de casa' },
-  { id: '3', title: 'Jogar bola' },
+  { id: '1', title: 'Estudos', tasks: [{ id: '1', title: 'Estudar Node', completed: false }] },
+  { id: '2', title: 'Tarefas de casa', tasks: [] },
+  { id: '3', title: 'Jogar bola', tasks: [] },
 ]
 
 module.exports = {
   getAllTaskLists: () => {
     return taskLists
+  },
+
+  getTaskListById: (id) => {
+    return taskLists.find(list => list.id === id)
   },
 
   createList: (title) => {
