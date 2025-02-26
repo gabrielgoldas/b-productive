@@ -31,6 +31,11 @@ module.exports = {
   },
 
   // POST /app/:id/excluir
+  delete: (req, res) => {
+    const { id } = req.params
+    taskListModel.deleteList(id)
+    res.redirect('/app')
+  },
 
   // POST /app/:id/nova-tarefa
   addTask: (req, res) => {

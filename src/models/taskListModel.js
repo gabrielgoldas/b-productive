@@ -27,6 +27,11 @@ module.exports = {
     taskLists.push(taskList)
   },
 
+  deleteList: (listId) => {
+    const listIndex = taskLists.findIndex(list => list.id === listId)
+    taskLists.splice(listIndex, 1)
+  },
+
   addTask: (listId, taskTitle) => {
     const newTask = {
       id: Math.floor(Math.random() * 99999999).toString(),
